@@ -24,8 +24,8 @@ Next, setup configuration updates by adding the following to your `moonraker.con
 ```ini
 # ~/printer_data/config/moonraker.conf
 
-# Klipper Configs Updates
-[include moonraker-klipper-configs.conf]
+# Klipper Configs update_manager entry
+[include moonraker-klipper-configs.cfg]
 ```
 
 Finally, include what you need in your config files, for example in your `printer.cfg` file:

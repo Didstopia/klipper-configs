@@ -1,0 +1,19 @@
+# Ignore everything by default
+*
+
+# Allow git files
+!.gitignore
+!.gitattributes
+
+# Allow GitHub files
+!.github/
+!.github/**/*
+
+# Allow Markdown and license files
+!*.md
+!LICENSE
+
+# Allow configuration files
+!*.cfg
+!*.conf
+
