@@ -10,29 +10,30 @@ For the initial setup, you simply need to clone the repository to your home dire
 then symlink all the Klipper configuration files to your configuration directory.
 
 Please note that you can also symlink only the config(s) you're interested in,
-as the entire idea is to provide automatic updates for the configuration files.
+as the entire idea is to provide an easy way to handle configuration updates.
 
 ```bash
 cd ~
 git clone https://github.com/Didstopia/klipper-configs.git
 ln -sf ~/klipper-configs/extra ~/printer_data/config/extra
+ln -sf ~/klipper-configs/moonraker-klipper-configs.cfg ~/printer_data/config/moonraker-klipper-configs.cfg
 ```
 
-Next, setup the automatic updates by adding the following to your `moonraker.conf` file.
+Next, setup configuration updates by adding the following to your `moonraker.conf` file.
 
 ```ini
-[update_manager klipper-configs]
-type: git_repo
-primary_branch: master
-path: ~/klipper-configs
-origin: https://github.com/Didstopia/klipper-configs.git
-managed_services: klipper
+# ~/printer_data/config/moonraker.conf
+
+# Klipper Configs Updates
+[include moonraker-klipper-configs.conf]
 ```
 
 Finally, include what you need in your config files, for example in your `printer.cfg` file:
 
 ```ini
 # ~/printer_data/config/printer.cfg
+
+# Include the base Creality Ender-3 V2 config
 [include extra/creality-ender-3-v2.cfg]
 
 # Now you can customize and override
